@@ -1,14 +1,15 @@
 const palindromes = function (str) {
-  let strArray = str.toLowerCase().replace(/[^\w]/g, "").split("");
-  const length = strArray.length;
-  const middle = Math.floor(length / 2);
+  const alphanumerical = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
-  for (let i = 0; i < middle; i++) {
-    if (strArray[i] != strArray[length - 1 - i]) {
-      return false;
-    }
-  }
-  return true;
+  const cleanedString = string
+    .toLowerCase()
+    .split('')
+    .filter((character) => alphanumerical.includes(character))
+    .join('');
+
+  const reversedString = cleanedString.split('').reverse().join('');
+
+  return cleanedString === reversedString;
 };
 
 // Do not edit below this line
